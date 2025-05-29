@@ -1,6 +1,5 @@
 package com.prata.dscommerce.Services;
 
-import com.fasterxml.jackson.databind.exc.InvalidDefinitionException;
 import com.prata.dscommerce.Services.exceptios.DatabaseException;
 import com.prata.dscommerce.Services.exceptios.ResourceNotFoundException;
 import com.prata.dscommerce.dto.ProductDTO;
@@ -15,8 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class ProductService {
