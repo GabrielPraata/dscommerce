@@ -3,6 +3,7 @@ package com.prata.dscommerce.Services;
 import com.prata.dscommerce.Services.exceptios.DatabaseException;
 import com.prata.dscommerce.Services.exceptios.ResourceNotFoundException;
 import com.prata.dscommerce.dto.ProductDTO;
+import com.prata.dscommerce.dto.ProductMinDTO;
 import com.prata.dscommerce.entities.Product;
 import com.prata.dscommerce.repositories.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -29,9 +30,9 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(String name, Pageable pageable) {
+    public Page<ProductMinDTO> findAll(String name, Pageable pageable) {
         Page<Product> result = repository.searchByName(name, pageable);
-        return result.map(x -> new ProductDTO(x));
+        return result.map(x -> new ProductMinDTO(x));
     }
 
     @Transactional
