@@ -2,8 +2,10 @@ package com.prata.dscommerce.Services;
 
 import com.prata.dscommerce.Services.exceptios.DatabaseException;
 import com.prata.dscommerce.Services.exceptios.ResourceNotFoundException;
+import com.prata.dscommerce.dto.CategoryDTO;
 import com.prata.dscommerce.dto.ProductDTO;
 import com.prata.dscommerce.dto.ProductMinDTO;
+import com.prata.dscommerce.entities.Category;
 import com.prata.dscommerce.entities.Product;
 import com.prata.dscommerce.repositories.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -73,5 +75,12 @@ public class ProductService {
         entity.setDescription(dto.getDescription());
         entity.setPrice(dto.getPrice());
         entity.setImgUrl(dto.getImgUrl());
+
+        entity.getCategories().clear();
+        for (CategoryDTO catDto : dto.getCategories()) {
+            Category cat = new Category();
+            cat.setId(catDto.getId());
+            entity.getCategories().add(cat);
+        }
     }
 }
