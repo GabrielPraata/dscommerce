@@ -1,4 +1,4 @@
-package com.prata.dscommerce.controllers.it;
+package com.prata.dscommerce.controllers;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
