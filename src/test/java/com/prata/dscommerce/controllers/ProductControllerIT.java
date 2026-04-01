@@ -1,4 +1,4 @@
-package com.prata.dscommerce.controllers.it;
+package com.prata.dscommerce.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.prata.dscommerce.dto.ProductDTO;
@@ -13,7 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-public class PoductControllerIT {
+public class ProductControllerIT {
 
     @Autowired
     private MockMvc mockMvc;
